@@ -28,6 +28,7 @@ public class Server {
         logger.info(Text.getGreenText("Entering server!"));
 
         DBWorker.init();
+        logger.info(Text.getGreenText("Database connected!"));
 
         Selector selector = Selector.open();
         ServerSocketChannel serverSocketChannel = ServerSocketChannel.open();
@@ -36,6 +37,9 @@ public class Server {
         serverSocketChannel.configureBlocking(false);
 
         getCollection();
+        logger.info(Text.getGreenText("Last session loaded!"));
+
+        logger.info(Text.getGreenText("Waiting for clients to connect..."));
 
         while(true) {
             serverSocketChannel.register(selector, SelectionKey.OP_ACCEPT);

@@ -29,9 +29,9 @@ public class Client {
         while (!connect()) connect();
 
         while (true) {
-            System.out.println(Text.getBlueText("Enter username:"));
+            System.out.println(Text.getYellowText("Enter username:"));
             String username = console.nextLine();
-            System.out.println(Text.getBlueText("Enter password:"));
+            System.out.println(Text.getYellowText("Enter password:"));
             String password = console.nextLine();
             if (password.equals("")) password = null;
             session = sessionWorker.createSession(username, password);
